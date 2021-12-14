@@ -1,0 +1,43 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+body {
+	background: rgb(191, 51, 254);
+	background: linear-gradient(
+		12deg,
+		rgba(191, 51, 254, 1) 0%,
+		rgba(193, 61, 237, 1) 0%,
+		rgba(14, 221, 71, 1) 100%
+	);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+#svelte {
+	background: none;
+    padding-left:20%;
+    padding-right: 20%;
+    margin-top: 1em;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1{
+    text-align: center;
+}
+
+input {
+    justify-self: center;
+}
+
+#TodoItem {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
