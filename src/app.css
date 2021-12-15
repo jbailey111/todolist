@@ -1,6 +1,6 @@
 * {
-    margin:0;
-    padding:0;
+	margin: 0;
+	padding: 0;
 }
 
 body {
@@ -17,28 +17,27 @@ body {
 
 #svelte {
 	background: none;
-
 }
 
 #container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left:20%;
-    padding-right: 20%;
-    margin-top: 1em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-left: 20%;
+	padding-right: 20%;
+	margin-top: 1em;
 }
 
-h1{
-    text-align: center;
+h1 {
+	text-align: center;
 }
 
 input {
-    justify-self: center;
+	justify-self: center;
 }
 
 #TodoItem {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
 }
