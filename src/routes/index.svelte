@@ -9,7 +9,7 @@
 
 <div id="container">
 	<h1 class="title">{title}</h1>
-	<form action="" method="" class="new">
+	<form action="/todos.json" method="post" class="new">
 		<input type="text" placeholder="+ Add a new Todo" name="text" aria-label="Add a todo item" />
 	</form>
 	<div id="TodoItem">
