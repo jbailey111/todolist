@@ -1,10 +1,14 @@
+<script lang="ts">
+	export let todo: Todo;
+</script>
+
 <div class="todowrapper done">
 	<form action="" method="">
 		<input type="hidden" name="done" value="" />
 		<button class="toggle" aria-label="Mark done/not done" />
 	</form>
 	<form action="" method="" class="text">
-		<input type="text" />
+		<input type="text" value={todo.text}/>
 		<button class="save" aria-label="Save todo" />
 	</form>
 	<form action="" method="">
