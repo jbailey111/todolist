@@ -8,10 +8,10 @@
 		<button class="toggle" aria-label="Mark done/not done" />
 	</form>
 	<form action="" method="" class="text">
-		<input type="text" value={todo.text}/>
+		<input type="text" value={todo.text} />
 		<button class="save" aria-label="Save todo" />
 	</form>
-	<form action="" method="">
+	<form action="/todos/{todo.uid}.json?_method=DELETE" method="post">
 		<button class="delete" aria-label="Delete todo" />
 	</form>
 </div>
