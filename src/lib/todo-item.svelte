@@ -1,9 +1,9 @@
 <script lang="ts">
 	export let todo: Todo;
-	const done = todo.done
+	const done = todo.done;
 </script>
 
-<div class="todowrapper" class:done={done}>
+<div class="todowrapper" class:done>
 	<form action="/todos/{todo.uid}.json?_method=PATCH" method="post">
 		<input type="hidden" name="done" value={todo.done ? '' : 'true'} />
 		<button
