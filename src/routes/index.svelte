@@ -12,7 +12,7 @@
 					todos
 				}
 			};
-			const {message} = await res.json();
+			const { message } = await res.json();
 			return {
 				error: new Error(message)
 			};
@@ -37,7 +37,7 @@
 	</form>
 	<div id="TodoItem">
 		{#each todos as todo}
-		<TodoItem {todo}/>
+			<TodoItem {todo} />
 		{/each}
 	</div>
 </div>
