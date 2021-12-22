@@ -1,5 +1,6 @@
 <script context="module" lang="ts">
 	import type { Load } from '@sveltejs/kit';
+	import { enhance } from '$lib/actions/form';
 
 	export const load: Load = async ({ fetch }) => {
 		const res = await fetch('/todos.json');
@@ -24,6 +25,11 @@
 	import TodoItem from '$lib/todo-item.svelte';
 	const title = 'Todo List';
 	export let todos: Todo[];
+
+	const processNewTodo = async (res: Response) => {
+		const newTodo = await res.json();
+		todos = [...todos, newTodo];
+	};
 </script>
 
 <svelte:head>
@@ -32,7 +38,14 @@
 
 <div id="container">
 	<h1 class="title">{title}</h1>
-	<form action="/todos.json" method="post" class="new">
+	<form
+		action="/todos.json"
+		method="post"
+		class="new"
+		use:enhance={{
+			result: processNewTodo
+		}}
+	>
 		<input type="text" placeholder="+ Add a new Todo" name="text" aria-label="Add a todo item" />
 	</form>
 	<div id="TodoItem">
