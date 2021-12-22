@@ -10,8 +10,7 @@ export const enhance = (form: HTMLFormElement, { result }) => {
 				},
 				body
 			});
-			if (res.ok) {
-				console.log('Res:', await res.json());
+			if (res.ok) {	
 				result(res);
 			} else {
 				console.log(await res.json());
