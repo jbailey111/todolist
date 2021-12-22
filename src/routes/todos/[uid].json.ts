@@ -6,10 +6,8 @@ export const del: RequestHandler = (request) => {
 };
 
 export const patch: RequestHandler<{}, FormData> = (request) => {
-	 return api(request, {
-		uid: `${Date.now()}`, //TODO: set up uid with database
-		created_at: new Date(),
+	return api(request, {
 		text: request.body.get('text'),
-		done: false
+		done: request.body.get('done') ? !!request.body.get('done') : undefined
 	});
-}
+};

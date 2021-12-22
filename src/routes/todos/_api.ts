@@ -14,20 +14,21 @@ export const api = (request: Request, data?: Record<string, unknown>) => {
 			break;
 		case 'POST':
 			todos.push(data as Todo);
-            body = data;
-            status = 201;
+			body = data;
+			status = 201;
 			break;
 		case 'DELETE':
 			todos = todos.filter((todo) => todo.uid !== request.params.uid);
 			break;
 		case 'PATCH':
-			status = 200,
-			todos = todos.map(todo => {
-			if (todo.uid === request.params.uid){
-				todo.text = data.text
-			}
-			return todo
-			})
+			(status = 200),
+				(todos = todos.map((todo) => {
+					if (todo.uid === request.params.uid) {
+						if (data.text) todo.text = data.text as string;
+						else todo.done = data.done as boolean;
+					}
+					return todo;
+				}));
 			break;
 
 		default:
